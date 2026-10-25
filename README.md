@@ -113,10 +113,6 @@
 
 推送代码、提交 Pull Request 或手动运行 [Build userscript](https://github.com/kun520ovo/linux-do-helper/actions/workflows/build.yml) 时，GitHub Actions 会使用 Node.js 22 和 esbuild 0.28.2 打包源码、内联 CSS、添加用户脚本元数据，并检查生成脚本的 JavaScript 语法。
 
-在成功的构建页面中下载 `linux-do-assistant` artifact，解压后将 `linux.do助手1.0.2.js` 导入 ScriptCat 或 Tampermonkey。仓库根目录也提供了 [1.0.2 脚本](linux.do助手1.0.2.js)。
-
-1.0.2 在跳转 Cloudflare 验证页时保留会话中的自动阅读状态，验证后返回原页面即可继续阅读；手动停止阅读仍会清除该状态。
-
 ## 相关链接
 
 - [脚本发布页](https://scriptcat.org/zh-CN/script-show-page/8000)
