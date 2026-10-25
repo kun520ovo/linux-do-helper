@@ -1,0 +1,27 @@
+// ==UserScript==
+// @name        linux.do助手
+// @namespace    https://scriptcat.org/zh-CN/users/212527
+// @version     1.0.2
+// @description 自动阅读、智能点赞、查询账号信息等功能
+// @author      kun&gpt-6-astra
+// @icon        https://cdn3.ldstatic.com/optimized/4X/6/a/6/6a6affc7b1ce8140279e959d32671304db06d5ab_2_180x180.png
+// @downloadURL https://scriptcat.org/zh-CN/script-show-page/8000
+// @updateURL https://scriptcat.org/zh-CN/script-show-page/8000
+// @license     MIT
+// @match       https://linux.do/*
+// @match       https://idcflare.com/*
+// @match       https://cdk.linux.do/*
+// @grant       GM_xmlhttpRequest
+// @grant       GM_addStyle
+// @grant       GM_setValue
+// @grant       GM_getValue
+// @grant       GM_getTab
+// @grant       GM_saveTab
+// @grant       unsafeWindow
+// @connect     connect.linux.do
+// @connect     credit.linux.do
+// @connect     cdk.linux.do
+// @connect     linux.do
+// @connect     *
+// @run-at      document-idle
+// ==/UserScript==

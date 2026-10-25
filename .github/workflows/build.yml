@@ -1,0 +1,56 @@
+name: Build userscript
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Build userscript
+        shell: bash
+        run: |
+          npx --yes esbuild@0.28.2 src/entry.js \
+            --bundle \
+            --format=iife \
+            --target=es2022 \
+            --charset=utf8 \
+            --loader:.css=text \
+            --legal-comments=inline \
+            --outfile="linux.do助手1.0.2.js"
+
+          node --input-type=module <<'NODE'
+          import { readFile, writeFile } from "node:fs/promises";
+
+          const outputPath = "linux.do助手1.0.2.js";
+          const header = await readFile("src/userscript-header.txt", "utf8");
+          const code = await readFile(outputPath, "utf8");
+          // Keep the installable script free of generated source-path markers.
+          await writeFile(
+            outputPath,
+            header.trimEnd() + "\n" + code.replace(/^[\t ]*\/\/ src\/[^\r\n]*(?:\r?\n|$)/gm, ""),
+            "utf8",
+          );
+          NODE
+
+          node --check "linux.do助手1.0.2.js"
+
+      - name: Upload userscript
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-do-assistant
+          path: linux.do助手1.0.2.js
+          if-no-files-found: error
