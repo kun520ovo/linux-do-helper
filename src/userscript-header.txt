@@ -5,8 +5,8 @@
 // @description 自动阅读、智能点赞、查询账号信息等功能
 // @author      kun&gpt-6-astra
 // @icon        https://cdn3.ldstatic.com/optimized/4X/6/a/6/6a6affc7b1ce8140279e959d32671304db06d5ab_2_180x180.png
-// @downloadURL https://scriptcat.org/zh-CN/script-show-page/8000
-// @updateURL https://scriptcat.org/zh-CN/script-show-page/8000
+// @downloadURL https://scriptcat.org/scripts/code/8000/linux.do%E5%8A%A9%E6%89%8B.user.js
+// @updateURL https://scriptcat.org/scripts/code/8000/linux.do%E5%8A%A9%E6%89%8B.user.js
 // @license     MIT
 // @match       https://linux.do/*
 // @match       https://idcflare.com/*
